@@ -1,3 +1,5 @@
+import { NgModule, NO_ERRORS_SCHEMA  } from '@angular/core';
+
 import { Component, Input } from '@angular/core';
 import { Movie } from '../movie';
 import { MovieService } from '../movie.service';
@@ -9,18 +11,13 @@ import { MovieService } from '../movie.service';
 })
 
 export class MovieDetailsComponent {
+  
+  @Input() public movie: Movie;
+  @Input() public createHandler: Function;
+  @Input() public updateHandler: Function;
+  @Input() public deleteHandler: Function;
 
-  @Input()
-  movie: Movie;
-
-  @Input()
-  createHandler: Function;
-  @Input()
-  updateHandler: Function;
-  @Input()
-  deleteHandler: Function;
-
-  constructor(private movieService: MovieService) { }
+  constructor (private movieService: MovieService) { }
 
   createMovie(movie: Movie) {
     this.movieService.createMovie(movie).then((newMovie: Movie) => {
@@ -39,6 +36,4 @@ export class MovieDetailsComponent {
       this.deleteHandler(deletedMovieId);
     });
   }
-
-
 }

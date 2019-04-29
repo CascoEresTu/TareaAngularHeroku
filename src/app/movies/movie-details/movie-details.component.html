@@ -1,6 +1,6 @@
 <div *ngIf="movie" class="row">
   <div class="col-md-12">
-    <h2 *ngIf="movie._id">movie Details</h2>
+    <h2 *ngIf="movie._id">Movie Details</h2>
     <h2 *ngIf="!movie._id">New movie</h2>
   </div>
 </div>
@@ -11,16 +11,16 @@
       <input class="form-control" name="movie-name" [(ngModel)]="movie.name" placeholder="Name" />
     </div>
     <div class="form-group">
-      <label for="movie-year">Email</label>
-      <input class="form-control" name="movie-year" [(ngModel)]="movie.year" placeholder="support@mlab.com" />
+      <label for="movie-year">Year</label>
+      <input class="form-control" name="movie-year" [(ngModel)]="movie.year" placeholder="1996" />
     </div>
     <div class="form-group">
-      <label for="movie-rank">Email</label>
-      <input class="form-control" name="movie-rank" [(ngModel)]="movie.year" placeholder="0" />
+      <label for="movie-rank">rank</label>
+      <input class="form-control" name="movie-rank" [(ngModel)]="movie.rank" placeholder= 0 />
     </div>
     
-    <button class="btn btn-primary" *ngIf="!movie._id" (click)="createmovie(movie)">Create</button>
-    <button class="btn btn-info" *ngIf="movie._id" (click)="updatemovie(movie)">Update</button>
-    <button class="btn btn-danger" *ngIf="movie._id" (click)="deletemovie(movie._id)">Delete</button>
+    <button class="btn btn-primary" *ngIf="!movie._id" (click)="createMovie(movie)">Create</button>
+    <button class="btn btn-info" *ngIf="movie._id" (click)="updateMovie(movie)">Update</button>
+    <button class="btn btn-danger" *ngIf="movie._id" (click)="deleteMovie(movie._id)">Delete</button>
   </form>
 </div>

@@ -1,3 +1,4 @@
+import { NgModule } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { Movie } from '../movie';
 import { MovieService } from '../movie.service';
@@ -10,6 +11,14 @@ import { MovieDetailsComponent } from '../movie-details/movie-details.component'
   providers: [MovieService]
 })
 
+@NgModule({
+  declarations: [
+    Movie,MovieDetailsComponent,MovieService
+    
+  ]
+}
+
+)
 export class MovieListComponent implements OnInit {
 
   movies: Movie[]
